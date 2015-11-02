@@ -1,0 +1,65 @@
+<?php
+
+
+
+/*
+
+Add any custom functions to your child theme here
+
+*/
+
+// Move footer widgetized area inside footer container
+
+/*--add_action( 'init', 'woo_move_footer_widgets' );
+
+
+
+function woo_move_footer_widgets() {
+
+remove_action( 'woo_footer_top', 'woo_footer_sidebars', 30 );
+
+add_action( 'woo_footer_inside', 'woo_footer_sidebars', 30 );
+
+}--/
+
+/*-- This will move footer widgets throughout the site by placing where you want to add_action to in the template*/
+
+
+
+/*------Widgetizing area---*/
+
+ /* Register our sidebars and widgetized areas.
+
+ */
+
+function footer_nav_widgets_init() {
+
+
+
+	register_sidebar( array(
+
+		'name'          => 'Footer Quick Links Area',
+
+		'id'            => 'footer_nav',
+
+		'before_widget' => '<div id="footerNavigation">',
+
+		'after_widget'  => '</div>',
+
+		'before_title'  => '<h2 class="darkBlueButton">',
+
+		'after_title'   => '</h2>',
+
+	) );
+
+
+
+}
+
+add_action( 'widgets_init', 'footer_nav_widgets_init' );
+
+
+
+    
+
+?>
