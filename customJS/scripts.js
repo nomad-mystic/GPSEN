@@ -7,12 +7,13 @@
 
 jQuery(document).ready(function($) {
 	///////////////////////////////////Widget Areas 
-	//// This is for the wiget sidebar movement
+	//// This is for the widget sidebar movement
 	var $sidebar   = $("#sidebar"), 
         $window    = $(window),
         offset     = $sidebar.offset(),
         topPadding = 15,
-        endScrollMargin = $sidebar.offset().top  + 800;
+        endScrollMargin = $sidebar.offset().top  + 800,
+			siteHerf = window.location.href;
     
     if($window.width() >= 1100) {
     	$window.scroll(function() {
@@ -43,14 +44,17 @@ jQuery(document).ready(function($) {
     		 // This stops the animation from moving when the sidebar links are 'clicked' 
 	        if($sidebar.hasClass('newsletterClicked')) {
     			$sidebar.stop().animate();
-    		} // end if 
+    		} // end if
+			if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+				$sidebar.stop().animate();
+			} // end if
     	}); // end $window.scroll function
 	} else {
 		$sidebar.animate({
 			marginTop: 0
 		});
 	}
-	// This check to see if any one resized there window if they are under 980px then stop animation 
+	// This check to see if any one resize there window if they are under 980px then stop animation
 	var resizeTimer;
 	$(window).on('resize', function(e) {
 		//console.log($window.width());
@@ -93,7 +97,10 @@ jQuery(document).ready(function($) {
 		    		 // This stops the animation from moving when the sidebar links are 'clicked' 
 			        if($sidebar.hasClass('newsletterClicked')) {
 		    			$sidebar.stop().animate();
-		    		} // end if 
+		    		} // end if
+					if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+						$sidebar.stop().animate();
+					} // end if
 			    }); // end $window.scroll function 
 			} else {
 				$sidebar.stop().animate({
@@ -236,16 +243,43 @@ jQuery(document).ready(function($) {
       	active: false
 
     }); // end governanceAccordion
-    $('#governanceAccordion h3').on('click', function(e) {
-    	this.animate({
-    		//boxShadow: '0px -1px 3px 0px rgba(0,0,0,.50)'
-    	});
-	}); // end click
+    //$('#governanceAccordion h3').on('click', function(e) {
+    	//this.animate({
+    	//	//boxShadow: '0px -1px 3px 0px rgba(0,0,0,.50)'
+    	//});
+	//}); // end click
 	// This is going to be the class that add accordion to live memberPartnerRegistrationPage 
 	$('.accordion').accordion({
     	collapsible: true,
       	heightStyle: "content",
       	active: false
 	});
+	var $accordionH3 = $('.accordion h3');
+	$('<span class="fa fa-chevron-up floatRight"></span>').appendTo($accordionH3);
+
+	/// THis is going to animate the span arrow of the h3's
+	$accordionH3.on('click', function() {
+		if($accordionH3.hasClass('clicked')) {
+			$(this).find('span.floatRight').stop().animate({  borderSpacing: 0 }, {
+				step: function(now) {
+					$(this).css('-webkit-transform','rotate('+now+'deg)');
+					$(this).css('-moz-transform','rotate('+now+'deg)');
+					$(this).css('transform','rotate('+now+'deg)');
+				},
+				duration:'fast'
+			},'linear');
+			$accordionH3.removeClass('clicked');
+		} else {
+			$(this).find('span.floatRight').stop().animate({  borderSpacing: 180 }, {
+				step: function(now) {
+					$(this).css('-webkit-transform','rotate('+now+'deg)');
+					$(this).css('-moz-transform','rotate('+now+'deg)');
+					$(this).css('transform','rotate('+now+'deg)');
+				},
+				duration:'fast'
+			},'linear');
+			$accordionH3.addClass('clicked');
+		}
+	}); // end $('#disabilityCategoriesPage h3').on('click'.....
 }); //end ready
 

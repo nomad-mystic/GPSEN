@@ -58,8 +58,8 @@ $page_template = woo_get_page_template();
                     $args = array (
                          'post_type'              => 'post',
                          'category_name'          => 'news',
-                         'order'                  => 'ASC',
-                         'orderby'                => 'post_date',
+                         'order'                  => 'DESC',
+                         'orderby'                => 'date',
                          'posts_per_page'         =>  '-1'
                     );
 
