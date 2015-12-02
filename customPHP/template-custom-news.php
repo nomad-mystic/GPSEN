@@ -59,7 +59,7 @@ $page_template = woo_get_page_template();
                          'post_type'              => 'post',
                          'category_name'          => 'news',
                          'order'                  => 'DESC',
-                         'orderby'                => 'date',
+                         'orderby'                => 'menu_order',
                          'posts_per_page'         =>  '-1'
                     );
 

@@ -33,9 +33,6 @@ add_action( 'woo_footer_inside', 'woo_footer_sidebars', 30 );
  */
 
 function footer_nav_widgets_init() {
-
-
-
 	register_sidebar( array(
 
 		'name'          => 'Footer Quick Links Area',
@@ -55,11 +52,24 @@ function footer_nav_widgets_init() {
 
 
 }
-
 add_action( 'widgets_init', 'footer_nav_widgets_init' );
 
-
-
-    
+/*---adding Page supports to posts---*/
+function add_page_support() {
+    $args = array( 'title',
+        'editor',
+        'excerpt',
+        'author',
+        'thumbnail',
+        'comments',
+        'trackbacks',
+        'revisions',
+        'custom-fields',
+        'page-attributes',
+        'post-formats',
+    );
+    add_post_type_support('post', $args);
+}
+add_action( 'init', 'add_page_support' );
 
 ?>

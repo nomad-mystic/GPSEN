@@ -45,7 +45,12 @@ jQuery(document).ready(function($) {
 	        if($sidebar.hasClass('newsletterClicked')) {
     			$sidebar.stop().animate();
     		} // end if
+
+			/// Turning off animation of side bar on load if page ===
 			if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+				$sidebar.stop().animate();
+			}
+			if(siteHerf === 'http://gpsen.org/partners/') {
 				$sidebar.stop().animate();
 			} // end if
     	}); // end $window.scroll function
@@ -98,7 +103,12 @@ jQuery(document).ready(function($) {
 			        if($sidebar.hasClass('newsletterClicked')) {
 		    			$sidebar.stop().animate();
 		    		} // end if
+
+					/// Turning off animation of side bar on load if page ===
 					if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+						$sidebar.stop().animate();
+					}
+					if(siteHerf === 'http://gpsen.org/partners/') {
 						$sidebar.stop().animate();
 					} // end if
 			    }); // end $window.scroll function 
@@ -180,7 +190,7 @@ jQuery(document).ready(function($) {
  //      heightStyle: "content",
  //      active: false
  //    });
-    // THis is goping to animate the fa-plus and fa-minus
+    // THis is going to animate the fa-plus and fa-minus
     var $FAQAccordionH3 = $('#FAQAccordion h3');
   	$('.accordionGreyHeaders').on('click', function() {
 
@@ -255,7 +265,7 @@ jQuery(document).ready(function($) {
       	active: false
 	});
 	var $accordionH3 = $('.accordion h3');
-	$('<span class="fa fa-chevron-up floatRight"></span>').appendTo($accordionH3);
+	$('<span class="fa fa-chevron-down floatRight"></span>').appendTo($accordionH3);
 
 	/// THis is going to animate the span arrow of the h3's
 	$accordionH3.on('click', function() {

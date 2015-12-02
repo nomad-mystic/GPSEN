@@ -47,15 +47,12 @@ $page_template = woo_get_page_template();
 
 
             <section id="main">
+            <h2 class="greenHeaders">Events</h2>
 <?php
 
 	woo_loop_before();
 
-	if (have_posts()) { $count = 0;
-			while (have_posts()) { the_post(); $count++;
-				woo_get_template_part( 'content', 'page' ); // Get the page content template file, contextually.
-			}
-		}
+
 		
 		// WP_Query arguments
 		$args = array (
@@ -84,30 +81,22 @@ $page_template = woo_get_page_template();
 			// no posts found
 		}
 
-
-
-
+    if (have_posts()) { $count = 0;
+    			while (have_posts()) { the_post(); $count++;
+    				woo_get_template_part( 'content', 'page-template-business' ); // Get the page content template file, contextually.
+    			}
+    		}
 	woo_loop_after();
-
 ?>
-
             </section><!-- /#main -->
 
             <?php woo_main_after(); ?>
 
-
-
 			<?php get_sidebar(); ?>
 
-
-	
 		</div><!-- /#main-sidebar-container -->
 
-
-
 		<?php get_sidebar( 'alt' ); ?>
-
-
 
     </div><!-- /#content -->
 
