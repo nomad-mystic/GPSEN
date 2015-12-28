@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
         endScrollMargin = $sidebar.offset().top  + 800,
 			siteHerf = window.location.href;
     
-    if($window.width() >= 1100) {
+    if ($window.width() >= 1100) {
     	$window.scroll(function() {
 	        if ($window.scrollTop() > offset.top) {
 	            $sidebar.stop().animate({
@@ -28,29 +28,38 @@ jQuery(document).ready(function($) {
 	            });
 	        } // end if 
 	        /// my if stament that makes the #sidebar animate to stopped offset().top
-	        if($window.scrollTop() >= endScrollMargin) {
+	        if ($window.scrollTop() >= endScrollMargin) {
 	        	$sidebar.stop().animate({
 	                marginBottom: 0
 	            });
 	        } // end if 
 	        // This stops the animation from moving when the sidebar links are 'clicked' 
-	        if($sidebar.hasClass('contactSidebarClicked')) {
+	        if ($sidebar.hasClass('contactSidebarClicked')) {
     			$sidebar.stop().animate();
     		} // end if 
     		 // This stops the animation from moving when the sidebar links are 'clicked' 
-	        if($sidebar.hasClass('getInvolvedClicked')) {
+	        if ($sidebar.hasClass('getInvolvedClicked')) {
     			$sidebar.stop().animate();
     		} // end if 
     		 // This stops the animation from moving when the sidebar links are 'clicked' 
-	        if($sidebar.hasClass('newsletterClicked')) {
+	        if ($sidebar.hasClass('newsletterClicked')) {
     			$sidebar.stop().animate();
     		} // end if
 
 			/// Turning off animation of side bar on load if page ===
-			if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+			if (siteHerf === 'http://gpsen.org/member-partner-registration/') {
 				$sidebar.stop().animate();
 			}
-			if(siteHerf === 'http://gpsen.org/partners/') {
+			if (siteHerf === 'http://gpsen.org/partners/') {
+				$sidebar.stop().animate();
+			} // end if
+			if (siteHerf === 'http://gpsen.org/donations/donate-to-greater-portland-sustainability-education-network/') {
+				$sidebar.stop().animate();
+			} // end if
+			if (siteHerf === 'http://gpsen.org/mailchimp-sign-up/') {
+				$sidebar.stop().animate();
+			} // end if
+			if (siteHerf === 'http://gpsen.org/newsletter-resources/') {
 				$sidebar.stop().animate();
 			} // end if
     	}); // end $window.scroll function
@@ -73,7 +82,7 @@ jQuery(document).ready(function($) {
 		            });
 		        } 
 			// THis will run larger screen animation same stament as above 
-			if($window.width() >= 1100) {
+			if ($window.width() >= 1100) {
 		    	$window.scroll(function() {
 			        if ($window.scrollTop() > offset.top) {
 			            $sidebar.stop().animate({
@@ -85,7 +94,7 @@ jQuery(document).ready(function($) {
 			                marginTop: 0
 			            });
 			        }
-				    /// my if stament that makes the #sidebar animate to stopped offset().top
+				    /// my if statement that makes the #sidebar animate to stopped offset().top
 				    if($window.scrollTop() >= endScrollMargin) {
 				        	$sidebar.stop().animate({
 				                marginBottom: 0
@@ -96,21 +105,30 @@ jQuery(document).ready(function($) {
 		    			$sidebar.stop().animate();
 		    		} // end if 
 		    		 // This stops the animation from moving when the sidebar links are 'clicked' 
-			        if($sidebar.hasClass('getInvolvedClicked')) {
+			        if ($sidebar.hasClass('getInvolvedClicked')) {
 		    			$sidebar.stop().animate();
 		    		} // end if 
 		    		 // This stops the animation from moving when the sidebar links are 'clicked' 
-			        if($sidebar.hasClass('newsletterClicked')) {
+			        if ($sidebar.hasClass('newsletterClicked')) {
 		    			$sidebar.stop().animate();
 		    		} // end if
 
 					/// Turning off animation of side bar on load if page ===
-					if(siteHerf === 'http://gpsen.org/member-partner-registration/') {
+					if (siteHerf === 'http://gpsen.org/member-partner-registration/') {
 						$sidebar.stop().animate();
 					}
-					if(siteHerf === 'http://gpsen.org/partners/') {
+					if (siteHerf === 'http://gpsen.org/partners/') {
 						$sidebar.stop().animate();
 					} // end if
+					if (siteHerf === 'http://gpsen.org/donations/donate-to-greater-portland-sustainability-education-network/') {
+						$sidebar.stop().animate();
+					} // end if
+					if (siteHerf === 'http://gpsen.org/mailchimp-sign-up/') {
+						$sidebar.stop().animate();
+					} // end if
+                    if (siteHerf === 'http://gpsen.org/newsletter-resources/') {
+                        $sidebar.stop().animate();
+                    } // end if
 			    }); // end $window.scroll function 
 			} else {
 				$sidebar.stop().animate({
@@ -176,7 +194,6 @@ jQuery(document).ready(function($) {
 	});
 	// This is for the RCE UNU picture should only show on homePage 
 	var siteHerf = window.location.href;
-	console.log(siteHerf);
 	if(siteHerf === 'http://gpsen.org/') {
 		$('#RCELogoSidebar').addClass('displayBlock');
 	} else {
@@ -291,5 +308,13 @@ jQuery(document).ready(function($) {
 			$accordionH3.addClass('clicked');
 		}
 	}); // end $('#disabilityCategoriesPage h3').on('click'.....
+	/// Form pages
+	///Mail Chimp Form
+
+	// THis is going to be for the confirmation message a user submits Partner form as individual
+	var $confirmationMessage = $('.gform_confirmation_message_5');
+	var $message = '<h1>' + $confirmationMessage.html() + '</h1>';
+	var $confirmationArea = $('.confirmationArea');
+	$confirmationArea.append($message);
 }); //end ready
 
