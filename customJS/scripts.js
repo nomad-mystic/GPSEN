@@ -62,6 +62,9 @@ jQuery(document).ready(function($) {
 			if (siteHerf === 'http://gpsen.org/newsletter-resources/') {
 				$sidebar.stop().animate();
 			} // end if
+            if (siteHerf === 'http://gpsen.org/contact/') {
+                $sidebar.stop().animate();
+            } // end if
     	}); // end $window.scroll function
 	} else {
 		$sidebar.animate({
@@ -127,6 +130,9 @@ jQuery(document).ready(function($) {
 						$sidebar.stop().animate();
 					} // end if
                     if (siteHerf === 'http://gpsen.org/newsletter-resources/') {
+                        $sidebar.stop().animate();
+                    } // end if
+                    if (siteHerf === 'http://gpsen.org/contact/') {
                         $sidebar.stop().animate();
                     } // end if
 			    }); // end $window.scroll function 
@@ -312,9 +318,9 @@ jQuery(document).ready(function($) {
 	///Mail Chimp Form
 
 	// THis is going to be for the confirmation message a user submits Partner form as individual
-	var $confirmationMessage = $('.gform_confirmation_message_5');
-	var $message = '<h1>' + $confirmationMessage.html() + '</h1>';
-	var $confirmationArea = $('.confirmationArea');
-	$confirmationArea.append($message);
+	//var $confirmationMessage = $('.gform_confirmation_message_5');
+	//var $message = '<h1>' + $confirmationMessage.html() + '</h1>';
+	//var $confirmationArea = $('.confirmationArea');
+	//$confirmationArea.append($message);
 }); //end ready
 
