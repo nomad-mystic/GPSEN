@@ -34,23 +34,13 @@ add_action( 'woo_footer_inside', 'woo_footer_sidebars', 30 );
 
 function footer_nav_widgets_init() {
 	register_sidebar( array(
-
 		'name'          => 'Footer Quick Links Area',
-
 		'id'            => 'footer_nav',
-
 		'before_widget' => '<div id="footerNavigation">',
-
 		'after_widget'  => '</div>',
-
-		'before_title'  => '<h2 class="darkBlueButton">',
-
+		'before_title'  => '<h2 class="liteBlueButton">',
 		'after_title'   => '</h2>',
-
-	) );
-
-
-
+	));
 }
 add_action( 'widgets_init', 'footer_nav_widgets_init' );
 
@@ -72,4 +62,3 @@ function add_page_support() {
 }
 add_action( 'init', 'add_page_support' );
 
-?>

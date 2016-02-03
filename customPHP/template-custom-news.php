@@ -10,8 +10,6 @@
  * @subpackage Template
  */
 
-
-
 global $woo_options, $wp_query;
 
 get_header();
@@ -65,15 +63,16 @@ $page_template = woo_get_page_template();
                          // no posts found
                     }
 
-                    if (have_posts()) { $count = 0;
-                         while (have_posts()) { the_post(); $count++;
+                    if (have_posts()) {
+                         $count = 0;
+                         while (have_posts()) {
+                              the_post();
+                              $count++;
                               woo_get_template_part( 'content', 'page-template-business' ); // Get the page content template file, contextually.
                          }
                     }
                     woo_loop_after();
-
                     ?>
-
                </section><!-- /#main -->
 
                <?php woo_main_after(); ?>
