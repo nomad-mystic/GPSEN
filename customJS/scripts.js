@@ -65,6 +65,9 @@ jQuery(document).ready(function($) {
             if (siteHerf === 'http://gpsen.org/contact/') {
                 $sidebar.stop().animate();
             } // end if
+            if (siteHerf === 'http://gpsen.org/the-meaning-of-our-logo/') {
+                $sidebar.stop().animate();
+            } // end if
     	}); // end $window.scroll function
 	} else {
 		$sidebar.animate({
@@ -133,6 +136,9 @@ jQuery(document).ready(function($) {
                         $sidebar.stop().animate();
                     } // end if
                     if (siteHerf === 'http://gpsen.org/contact/') {
+                        $sidebar.stop().animate();
+                    } // end if
+                    if (siteHerf === 'http://gpsen.org/the-meaning-of-our-logo/') {
                         $sidebar.stop().animate();
                     } // end if
 			    }); // end $window.scroll function 
@@ -316,7 +322,6 @@ jQuery(document).ready(function($) {
 	}); // end $('#disabilityCategoriesPage h3').on('click'.....
 	/// Form pages
 	///Mail Chimp Form
-
 	// THis is going to be for the confirmation message a user submits Partner form as individual
 	//var $confirmationMessage = $('.gform_confirmation_message_5');
 	//var $message = '<h1>' + $confirmationMessage.html() + '</h1>';
