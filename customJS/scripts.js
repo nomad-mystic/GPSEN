@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
         offset     = $sidebar.offset(),
         topPadding = 15,
         endScrollMargin = $sidebar.offset().top  + 800,
-			siteHerf = window.location.href;
+        siteHerf = window.location.href;
     
     if ($window.width() >= 1100) {
     	$window.scroll(function() {
@@ -293,9 +293,10 @@ jQuery(document).ready(function($) {
       	heightStyle: "content",
       	active: false
 	});
-	var $accordionH3 = $('.accordion h3');
-	$('<span class="fa fa-chevron-down floatRight"></span>').appendTo($accordionH3);
-
+	if (siteHerf != 'http://gpsen.org/testing-new-resources-page-post-type/') {
+        var $accordionH3 = $('.accordion h3');
+        $('<span class="fa fa-chevron-down floatRight"></span>').appendTo($accordionH3);
+    }
 	/// THis is going to animate the span arrow of the h3's
 	$accordionH3.on('click', function() {
 		if($accordionH3.hasClass('clicked')) {

@@ -36,8 +36,10 @@ $page_template = woo_get_page_template();
                <?php woo_main_before(); ?>
                <?php if ((isset( $woo_options['woo_slider_biz']) && 'true' == $woo_options['woo_slider_biz']) && (isset( $woo_options['woo_slider_biz_full'] ) && 'false' == $woo_options['woo_slider_biz_full'] ) ) { $saved = $wp_query; woo_slider_biz(); $wp_query = $saved; } ?>
                <section id="main">
-                    <h2 class="greenHeaders">Events</h2>
-                    <h2 class="liteGreenHeaders">Publications &amp; media Opportunities</h2>
+                    <h2 class="greenHeaders">Resources</h2>
+                    <div class="accordion">
+                    <h2 class="accordionHeadersGrey">Publications &amp; Media Opportunities</h2>
+                        <div>
                     <?php
                          /// Starting custom posts
                          // Publications media Opportunities
@@ -64,7 +66,10 @@ $page_template = woo_get_page_template();
                               }
                          }
                     ?>
-                    <h2 class="liteGreenHeaders">Jobs &amp; Internships</h2>
+                        </div>
+
+                    <h2 class="accordionHeadersGrey">Jobs &amp; Internships</h2>
+                        <div>
                     <?php
                          // Jobs and internships
                          // WP_Query arguments
@@ -90,7 +95,9 @@ $page_template = woo_get_page_template();
                               }
                          }
                     ?>
-                    <h2 class="liteGreenHeaders">Grant Opportunities</h2>
+                        </div>
+                    <h2 class="accordionHeadersGrey">Grant Opportunities</h2>
+                        <div>
                     <?php
                          // Grant Opportunities
                          // WP_Query arguments
@@ -116,7 +123,9 @@ $page_template = woo_get_page_template();
                               }
                          }
                     ?>
-                    <h2 class="liteGreenHeaders">Training Opportunities</h2>
+                        </div>
+                    <h2 class="accordionHeadersGrey">Training Opportunities</h2>
+                        <div>
                     <?php
                          // Training Opportunities
                          // WP_Query arguments
@@ -142,7 +151,9 @@ $page_template = woo_get_page_template();
                               }
                          }
                     ?>
-                    <h2 class="liteGreenHeaders">Curriculum Resources</h2>
+                        </div>
+                    <h2 class="accordionHeadersGrey">Curriculum Resources</h2>
+                        <div>
                     <?php
                          // Curriculum Resources
                          // WP_Query arguments
@@ -168,6 +179,8 @@ $page_template = woo_get_page_template();
                               }
                          }
                     ?>
+                        </div>
+                    </div><!--end accordion-->
                     <?php
                     // This brings in the other content for that page from the text editor
                     if (have_posts()) {
@@ -180,6 +193,7 @@ $page_template = woo_get_page_template();
                     }
                     woo_loop_after();
                     ?>
+
                </section><!-- /#main -->
 
                <?php woo_main_after(); ?>
