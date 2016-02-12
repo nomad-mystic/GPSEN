@@ -68,6 +68,9 @@ jQuery(document).ready(function($) {
             if (siteHerf === 'http://gpsen.org/the-meaning-of-our-logo/') {
                 $sidebar.stop().animate();
             } // end if
+			if (siteHerf === 'http://gpsen.org/resources/') {
+				$sidebar.stop().animate();
+			} // end if
     	}); // end $window.scroll function
 	} else {
 		$sidebar.animate({
@@ -141,6 +144,9 @@ jQuery(document).ready(function($) {
                     if (siteHerf === 'http://gpsen.org/the-meaning-of-our-logo/') {
                         $sidebar.stop().animate();
                     } // end if
+					if (siteHerf === 'http://gpsen.org/resources/') {
+						$sidebar.stop().animate();
+					} // end if
 			    }); // end $window.scroll function 
 			} else {
 				$sidebar.stop().animate({
@@ -287,19 +293,22 @@ jQuery(document).ready(function($) {
     	//	//boxShadow: '0px -1px 3px 0px rgba(0,0,0,.50)'
     	//});
 	//}); // end click
-	// This is going to be the class that add accordion to live memberPartnerRegistrationPage 
+	// This is going to be the class that add accordion to live
 	$('.accordion').accordion({
     	collapsible: true,
       	heightStyle: "content",
       	active: false
 	});
-	if (siteHerf != 'http://gpsen.org/testing-new-resources-page-post-type/') {
+	if (siteHerf != 'http://gpsen.org/resources/') {
         var $accordionH3 = $('.accordion h3');
         $('<span class="fa fa-chevron-down floatRight"></span>').appendTo($accordionH3);
-    }
+    } else if (siteHerf === 'http://gpsen.org/resources/') {
+		var $accordionH3 = $('.accordion .accordionHeadersGrey');
+		$('<span class="fa fa-chevron-down floatRight"></span>').appendTo($accordionH3);
+	}
 	/// THis is going to animate the span arrow of the h3's
 	$accordionH3.on('click', function() {
-		if($accordionH3.hasClass('clicked')) {
+		if($accordionH3.hasClass('ui-accordion-content-active')) {
 			$(this).find('span.floatRight').stop().animate({  borderSpacing: 0 }, {
 				step: function(now) {
 					$(this).css('-webkit-transform','rotate('+now+'deg)');
@@ -308,7 +317,7 @@ jQuery(document).ready(function($) {
 				},
 				duration:'fast'
 			},'linear');
-			$accordionH3.removeClass('clicked');
+			$accordionH3.removeClass('ui-accordion-content-active');
 		} else {
 			$(this).find('span.floatRight').stop().animate({  borderSpacing: 180 }, {
 				step: function(now) {
@@ -318,7 +327,7 @@ jQuery(document).ready(function($) {
 				},
 				duration:'fast'
 			},'linear');
-			$accordionH3.addClass('clicked');
+			$accordionH3.addClass('ui-accordion-content-active');
 		}
 	}); // end $('#disabilityCategoriesPage h3').on('click'.....
 	/// Form pages

@@ -38,39 +38,38 @@ $page_template = woo_get_page_template();
                <section id="main">
                     <h2 class="greenHeaders">Resources</h2>
                     <div class="accordion">
-                    <h2 class="accordionHeadersGrey">Publications &amp; Media Opportunities</h2>
-                        <div>
-                    <?php
-                         /// Starting custom posts
-                         // Publications media Opportunities
-                         // WP_Query arguments
-                         $publicationArgs = array(
-                              'post_type'              => 'post',
-                              'category_name'          => 'publications-media-opportunities',
-                              'order'                  => 'DESC',
-                              'orderby'                => 'menu_order',
-                              'posts_per_page'         =>  '-1'
-                         );
-                         // The Query
-                         $publicationQuery = new WP_Query($publicationArgs);
-                         // The Loop
-                         if ($publicationQuery->have_posts()) {
-                              while ($publicationQuery->have_posts()) {
-                                   $publicationQuery->the_post();
-                                   echo '<div class="entry-content greySections addLiteMarginTop">';
-                                   echo '<div class="whiteCard">';
-                                   echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
-                                   the_content();
-                                   echo '</div>';
-                                   echo '</div>';
+                         <h2 class="accordionHeadersGrey">Classes, Workshops &amp; Conferences</h2>
+                         <div>
+                              <?php
+                              /// Starting custom posts
+                              // Publications media Opportunities
+                              // WP_Query arguments
+                              $classesWorkshopsArgs = array(
+                                   'post_type'              => 'post',
+                                   'category_name'          => 'classes-workshops-and-conferences',
+                                   'order'                  => 'DESC',
+                                   'orderby'                => 'menu_order',
+                                   'posts_per_page'         =>  '-1'
+                              );
+                              // The Query
+                              $classesWorkshopsQuery = new WP_Query($classesWorkshopsArgs);
+                              // The Loop
+                              if ($classesWorkshopsQuery->have_posts()) {
+                                   while ($classesWorkshopsQuery->have_posts()) {
+                                        $classesWorkshopsQuery->the_post();
+                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+                                        echo '<div class="whiteCard">';
+                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+                                        the_content();
+                                        echo '</div>';
+                                        echo '</div>';
+                                   }
                               }
-                         }
-                    ?>
-                        </div>
-
-                    <h2 class="accordionHeadersGrey">Jobs &amp; Internships</h2>
+                              ?>
+                         </div>
+                    <h2 class="accordionHeadersGrey">Jobs, Internships &amp; Volunteer Opportunities</h2>
                         <div>
-                    <?php
+                         <?php
                          // Jobs and internships
                          // WP_Query arguments
                          $jobsArgs = array(
@@ -94,92 +93,121 @@ $page_template = woo_get_page_template();
                                    echo '</div>';
                               }
                          }
-                    ?>
+                         ?>
                         </div>
-                    <h2 class="accordionHeadersGrey">Grant Opportunities</h2>
+                         <h2 class="accordionHeadersGrey">Grant &amp; Awards</h2>
                         <div>
-                    <?php
-                         // Grant Opportunities
-                         // WP_Query arguments
-                         $grantArgs = array(
-                              'post_type'              => 'post',
-                              'category_name'          => 'grant-opportunities',
-                              'order'                  => 'DESC',
-                              'orderby'                => 'menu_order',
-                              'posts_per_page'         =>  '-1'
-                         );
-                         // The Query
-                         $grantQuery = new WP_Query($grantArgs);
-                         // The Loop
-                         if ($grantQuery->have_posts()) {
-                              while ($grantQuery->have_posts()) {
-                                   $grantQuery->the_post();
-                                   echo '<div class="entry-content greySections addLiteMarginTop">';
-                                   echo '<div class="whiteCard">';
-                                   echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
-                                   the_content();
-                                   echo '</div>';
-                                   echo '</div>';
+                         <?php
+                              // Grant Opportunities
+                              // WP_Query arguments
+                              $grantArgs = array(
+                                   'post_type'              => 'post',
+                                   'category_name'          => 'grant-and-awards',
+                                   'order'                  => 'DESC',
+                                   'orderby'                => 'menu_order',
+                                   'posts_per_page'         =>  '-1'
+                              );
+                              // The Query
+                              $grantQuery = new WP_Query($grantArgs);
+                              // The Loop
+                              if ($grantQuery->have_posts()) {
+                                   while ($grantQuery->have_posts()) {
+                                        $grantQuery->the_post();
+                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+                                        echo '<div class="whiteCard">';
+                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+                                        the_content();
+                                        echo '</div>';
+                                        echo '</div>';
+                                   }
                               }
-                         }
-                    ?>
+                         ?>
                         </div>
-                    <h2 class="accordionHeadersGrey">Training Opportunities</h2>
+<!--                         <h2 class="accordionHeadersGrey">Training Opportunities</h2>-->
+<!--                        <div>-->
+<!--                         --><?php
+//                              // Training Opportunities
+//                              // WP_Query arguments
+//                              $trainingArgs = array(
+//                                   'post_type'              => 'post',
+//                                   'category_name'          => 'training-opportunities',
+//                                   'order'                  => 'DESC',
+//                                   'orderby'                => 'menu_order',
+//                                   'posts_per_page'         =>  '-1'
+//                              );
+//                              // The Query
+//                              $trainingQuery = new WP_Query($trainingArgs);
+//                              // The Loop
+//                              if ($trainingQuery->have_posts()) {
+//                                   while ($trainingQuery->have_posts()) {
+//                                        $trainingQuery->the_post();
+//                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+//                                        echo '<div class="whiteCard">';
+//                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+//                                        the_content();
+//                                        echo '</div>';
+//                                        echo '</div>';
+//                                   }
+//                              }
+//                         ?>
+<!--                        </div>-->
+                         <h2 class="accordionHeadersGrey">Curriculum Resources</h2>
                         <div>
-                    <?php
-                         // Training Opportunities
-                         // WP_Query arguments
-                         $trainingArgs = array(
-                              'post_type'              => 'post',
-                              'category_name'          => 'training-opportunities',
-                              'order'                  => 'DESC',
-                              'orderby'                => 'menu_order',
-                              'posts_per_page'         =>  '-1'
-                         );
-                         // The Query
-                         $trainingQuery = new WP_Query($trainingArgs);
-                         // The Loop
-                         if ($trainingQuery->have_posts()) {
-                              while ($trainingQuery->have_posts()) {
-                                   $trainingQuery->the_post();
-                                   echo '<div class="entry-content greySections addLiteMarginTop">';
-                                   echo '<div class="whiteCard">';
-                                   echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
-                                   the_content();
-                                   echo '</div>';
-                                   echo '</div>';
+                         <?php
+                              // Curriculum Resources
+                              // WP_Query arguments
+                              $curriculumArgs = array(
+                                   'post_type'              => 'post',
+                                   'category_name'          => 'curriculum-resources',
+                                   'order'                  => 'DESC',
+                                   'orderby'                => 'menu_order',
+                                   'posts_per_page'         =>  '-1'
+                              );
+                              // The Query
+                              $curriculumQuery = new WP_Query($curriculumArgs);
+                              // The Loop
+                              if ($curriculumQuery->have_posts()) {
+                                   while ($curriculumQuery->have_posts()) {
+                                        $curriculumQuery->the_post();
+                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+                                        echo '<div class="whiteCard">';
+                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+                                        the_content();
+                                        echo '</div>';
+                                        echo '</div>';
+                                   }
                               }
-                         }
-                    ?>
+                         ?>
                         </div>
-                    <h2 class="accordionHeadersGrey">Curriculum Resources</h2>
-                        <div>
-                    <?php
-                         // Curriculum Resources
-                         // WP_Query arguments
-                         $curriculumArgs = array(
-                              'post_type'              => 'post',
-                              'category_name'          => 'curriculum-resources',
-                              'order'                  => 'DESC',
-                              'orderby'                => 'menu_order',
-                              'posts_per_page'         =>  '-1'
-                         );
-                         // The Query
-                         $curriculumQuery = new WP_Query($curriculumArgs);
-                         // The Loop
-                         if ($curriculumQuery->have_posts()) {
-                              while ($curriculumQuery->have_posts()) {
-                                   $curriculumQuery->the_post();
-                                   echo '<div class="entry-content greySections addLiteMarginTop">';
-                                   echo '<div class="whiteCard">';
-                                   echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
-                                   the_content();
-                                   echo '</div>';
-                                   echo '</div>';
+                         <h2 class="accordionHeadersGrey">Publications &amp; Media Opportunities</h2>
+                         <div>
+                              <?php
+                              /// Starting custom posts
+                              // Publications media Opportunities
+                              // WP_Query arguments
+                              $publicationArgs = array(
+                                   'post_type'              => 'post',
+                                   'category_name'          => 'publications-media-opportunities',
+                                   'order'                  => 'DESC',
+                                   'orderby'                => 'menu_order',
+                                   'posts_per_page'         =>  '-1'
+                              );
+                              // The Query
+                              $publicationQuery = new WP_Query($publicationArgs);
+                              // The Loop
+                              if ($publicationQuery->have_posts()) {
+                                   while ($publicationQuery->have_posts()) {
+                                        $publicationQuery->the_post();
+                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+                                        echo '<div class="whiteCard">';
+                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+                                        the_content();
+                                        echo '</div>';
+                                        echo '</div>';
+                                   }
                               }
-                         }
-                    ?>
-                        </div>
+                              ?>
+                         </div>
                     </div><!--end accordion-->
                     <?php
                     // This brings in the other content for that page from the text editor
