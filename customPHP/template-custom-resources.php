@@ -208,6 +208,35 @@ $page_template = woo_get_page_template();
                               }
                               ?>
                          </div>
+                         <h2 class="accordionHeadersGrey">Other Resources</h2>
+                         <div>
+                              <?php
+                              /// Starting custom posts
+                              // Publications media Opportunities
+                              // WP_Query arguments
+                              $otherResourcesArgs = array(
+                                  'post_type'              => 'post',
+                                  'category_name'          => 'other-resources',
+                                  'order'                  => 'DESC',
+                                  'orderby'                => 'menu_order',
+                                  'posts_per_page'         =>  '-1'
+                              );
+                              // The Query
+                              $otherResourcesQuery = new WP_Query($otherResourcesArgs);
+                              // The Loop
+                              if ($otherResourcesQuery->have_posts()) {
+                                   while ($otherResourcesQuery->have_posts()) {
+                                        $otherResourcesQuery->the_post();
+                                        echo '<div class="entry-content greySections addLiteMarginTop">';
+                                        echo '<div class="whiteCard">';
+                                        echo '<h3 class="blueHeaders">' . get_the_title($ID) . '</h3>';
+                                        the_content();
+                                        echo '</div>';
+                                        echo '</div>';
+                                   }
+                              }
+                              ?>
+                         </div>
                     </div><!--end accordion-->
                     <?php
                     // This brings in the other content for that page from the text editor
